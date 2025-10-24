@@ -8,10 +8,10 @@
 - name: Copy wallpaper file
   copy:
     src: files/wallpaper.jpg
-    dest: "{{ lookup('env', 'HOME') }}/.wallpaper.jpg"
+    dest: "{{ ansible_env.HOME }}/.wallpaper.jpg"
     mode: "0644"
 
 - name: Set wallpaper
   community.general.dconf:
     key: "/org/cinnamon/desktop/background/picture-uri"
-    value: "'file://{{ lookup('env', 'HOME') }}/.wallpaper.jpg'"
+    value: "'file://{{ ansible_env.HOME }}/.wallpaper.jpg'"

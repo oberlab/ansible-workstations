@@ -1,7 +1,7 @@
 ---
 - name: Set pinned apps in the Cinnamon Dock
   json_patch:
-    src: "{{ lookup('env', 'HOME') }}/.config/cinnamon/spices/grouped-window-list@cinnamon.org/2.json"
+    src: "{{ ansible_env.HOME }}/.config/cinnamon/spices/grouped-window-list@cinnamon.org/2.json"
     pretty: yes
     operations:
       - op: replace
