@@ -1,5 +1,5 @@
 ---
-- name: Print selected software groups
+- name: Selected Software Groups
   debug:
     var: selected_groups
 

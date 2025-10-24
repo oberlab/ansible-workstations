@@ -1,5 +1,5 @@
 ---
-- name: Print selected flatpaks
+- name: Selected Flatpaks
   debug:
     var: flatpaks
 

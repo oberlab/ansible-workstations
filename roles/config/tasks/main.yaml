@@ -1,4 +1,6 @@
 - name: Ensure desktop configuration using dconf
+  become: yes
+  become_user: "{{ default_user }}"
   ansible.builtin.dconf:
     key: "{{ item.key }}"
     value: "{{ item.value }}"
@@ -6,12 +8,16 @@
   loop: "{{ config.dconf }}"
 
 - name: Copy wallpaper file
+  become: yes
+  become_user: "{{ default_user }}"
   copy:
     src: files/wallpaper.jpg
-    dest: "{{ ansible_env.HOME }}/.wallpaper.jpg"
+    dest: "/home/{{ default_user }}/.wallpaper.jpg"
     mode: "0644"
 
 - name: Set wallpaper
+  become: yes
+  become_user: "{{ default_user }}"
   community.general.dconf:
     key: "/org/cinnamon/desktop/background/picture-uri"
-    value: "'file://{{ ansible_env.HOME }}/.wallpaper.jpg'"
+    value: "'file:///home/{{ default_user }}/.wallpaper.jpg'"

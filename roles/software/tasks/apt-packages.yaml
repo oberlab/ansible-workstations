@@ -1,5 +1,5 @@
 ---
-- name: Print selected apt packages
+- name: Selected APT Packages
   debug:
     var: apt_packages
 

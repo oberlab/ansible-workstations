@@ -1,4 +1,4 @@
-pull_user: oberlab
+default_user: oberlab
 
 users:
   - name: oberlab
