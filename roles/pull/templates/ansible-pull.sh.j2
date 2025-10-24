@@ -2,7 +2,7 @@
 # {{ ansible_managed }}
 
 # Await network connectivity
-for i in {1..60}; do ping -c1 github.com &> /dev/null && break; done
+for i in {1..60}; do sleep 1; ping -c1 github.com &> /dev/null && break; done
 
 # Execute ansible-pull
 ansible-pull --vault-password-file "{{ pull.vault_pass_file }}" \
