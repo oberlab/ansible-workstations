@@ -7,7 +7,6 @@ for i in {1..60}; do sleep 1; ping -c1 github.com &> /dev/null && break; done
 # Execute ansible-pull
 ansible-pull --vault-password-file "{{ pull.vault_pass_file }}" \
     --url "{{ pull.repo_url }}" \
-    --only-if-changed \
     --inventory "localhost," \
     --connection local \
     "{{ pull.playbook }}" >> "{{ pull.logfile }}" 2>&1
