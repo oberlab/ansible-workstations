@@ -1,6 +1,7 @@
 pull:
   schedule: "reboot"
-  run_as: "{{ pull_user }}"
+  cron_user: root
+  ansible_user: "{{ pull_user }}"
   repo_url: https://github.com/oberlab/ansible-workstations.git
   playbook: setup.yaml
   vault_pass_file: /etc/pull-vault-pass.txt

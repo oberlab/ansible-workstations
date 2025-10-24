@@ -17,6 +17,6 @@
   become: yes
   ansible.builtin.cron:
     name: "Ansible Pull"
-    user: "{{ pull.run_as }}"
+    user: "{{ pull.cron_user }}"
     special_time: "{{ pull.schedule }}"
     job: "{{ pull.script_path }}"
