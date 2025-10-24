@@ -1,0 +1,8 @@
+selected_software: "{{ selected_groups | map('extract', software.groups) | flatten }}"
+apt_packages: "{{ selected_software | map(attribute='apt_packages') | select('defined') | list | flatten }}"
+apt_repository_keys: "{{ selected_software | map(attribute='apt_repository_keys') | select('defined') | list | flatten }}"
+apt_repositories: "{{ selected_software | map(attribute='apt_repositories') | select('defined') | list | flatten }}"
+flatpaks: "{{ selected_software | map(attribute='flatpaks') | select('defined') | list | flatten }}"
+pip_packages: "{{ selected_software | map(attribute='pip_packages') | select('defined') | list | flatten }}"
+launchers: "{{ selected_software | map(attribute='launchers') | select('defined') | list | flatten }}"
+pinned_apps: "{{ selected_software | map(attribute='pinned_apps') | select('defined') | list | flatten }}"

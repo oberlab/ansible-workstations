@@ -1,0 +1,22 @@
+---
+- name: Ensure ansible is installed
+  become: yes
+  ansible.builtin.apt:
+    name: ansible
+    state: present
+    update_cache: yes
+
+- name: Install ansible-pull script
+  become: yes
+  ansible.builtin.template:
+    src: ansible-pull.sh.j2
+    dest: "{{ pull.script_path }}"
+    mode: "0755"
+
+- name: Set up ansible-pull cron job
+  become: yes
+  ansible.builtin.cron:
+    name: "Ansible Pull"
+    user: "{{ pull.run_as }}"
+    special_time: "{{ pull.schedule }}"
+    job: "{{ pull.script_path }}"

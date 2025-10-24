@@ -1,0 +1,12 @@
+---
+- name: Create system users
+  become: yes
+  user:
+    name: "{{ item.name }}"
+    groups: "{{ item.groups }}"
+    password: "{{ item.password }}"
+    state: present
+    shell: /bin/bash
+    generate_ssh_key: True
+    append: true
+  with_items: "{{ users }}"

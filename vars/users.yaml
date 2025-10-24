@@ -1,0 +1,9 @@
+pull_user: oberlab
+
+users:
+  - name: oberlab
+    password: "{{ vault.user_password }}"
+    groups:
+      - dialout
+      - staff
+      - sudo

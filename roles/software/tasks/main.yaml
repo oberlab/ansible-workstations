@@ -1,0 +1,8 @@
+---
+- name: Print selected software groups
+  debug:
+    var: selected_groups
+
+- import_tasks: apt-packages.yaml
+- import_tasks: flatpaks.yaml
+- import_tasks: launchers.yaml

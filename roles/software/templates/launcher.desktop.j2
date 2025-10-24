@@ -1,0 +1,23 @@
+[Desktop Entry]
+Version=1.0
+Type={{ item.type | default('Application') }}
+
+Name={{ item.name }}
+{% if 'generic_name' in item %}
+GenericName={{ item.generic_name }}
+{% endif %}
+Comment={{ item.comment | default('') }}
+
+Exec={{ item.exec }}
+Terminal={{ item.terminal | default('false') }}
+Icon={{ item.icon | default('') }}
+
+{% if 'categories' in item %}
+Categories={% for cat in item.categories | default([]) %}{{ cat }};{% endfor %}
+{% endif %}
+
+{% if 'mime_types' in item %}
+MimeType={% for cat in item.mime_types | default([]) %}{{ cat }};{% endfor %}
+{% endif %}
+
+StartupNotify=true

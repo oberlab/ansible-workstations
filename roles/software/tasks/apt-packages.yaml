@@ -1,0 +1,29 @@
+---
+- name: Print selected apt packages
+  debug:
+    var: apt_packages
+
+- name: Install group-specific repository keys
+  become: yes
+  ansible.builtin.apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items: "{{ apt_repository_keys }}"
+
+- name: Install group-specific repositories
+  become: yes
+  ansible.builtin.apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items: "{{ apt_repositories }}"
+
+- name: Refresh package lists
+  become: yes
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install group-specific packages
+  become: yes
+  ansible.builtin.apt:
+    name: "{{ apt_packages }}"
+    state: latest

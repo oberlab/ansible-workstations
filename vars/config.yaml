@@ -1,0 +1,6 @@
+config:
+  dconf:
+    - key: /org/nemo/preferences/default-folder-viewer
+      value: "'list-view'"
+    - key: /org/nemo/preferences/sort-directories-first
+      value: true

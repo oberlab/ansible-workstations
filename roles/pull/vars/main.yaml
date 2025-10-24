@@ -1,0 +1,9 @@
+pull:
+  schedule: "reboot"
+  run_as: "{{ pull_user }}"
+  repo_url: https://github.com/oberlab/ansible-workstations.git
+  playbook: setup.yaml
+  vault_pass_file: /etc/pull-vault-pass.txt
+  become_pass_file:
+  logfile: /var/log/ansible-pull.log
+  script_path: /usr/local/bin/ansible-pull-workstation

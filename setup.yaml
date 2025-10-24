@@ -1,0 +1,17 @@
+- name: Setup Oberlab workstations
+  hosts: all
+  vars_files:
+    - vars/config.yaml
+    - vars/software.yaml
+    - vars/users.yaml
+    - vars/ntp.yaml
+    - vars/vault.yaml
+  roles:
+    - role: basics
+      tags: basics
+    - role: config
+      tags: config
+    - role: software
+      tags: software
+    - role: pull
+      tags: pull

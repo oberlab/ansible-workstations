@@ -1,0 +1,40 @@
+software:
+  groups:
+    base:
+      apt_packages:
+        - curl
+        - firefox
+        - firefox-locale-de
+        - git
+        - htop
+        - pip
+        - pv
+        - screen
+        - vim
+        - visual-studio-code
+      apt_repository_keys:
+        - https://packages.microsoft.com/keys/microsoft.asc
+      apt_repositories:
+        - deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+      pinned_apps:
+        - nemo.desktop
+        - firefox.desktop
+
+    2d-graphics:
+      apt_packages:
+        - inkscape
+        - gimp
+      pinned_apps:
+        - org.inkscape.Inkscape.desktop
+
+    arduino:
+      flatpaks:
+        - cc.arduino.IDE2
+      pinned_apps:
+        - cc.arduino.IDE2.desktop:flatpak
+
+    3d-printing:
+      apt_packages:
+        - prusa-slicer
+      pinned_apps:
+        - PrusaSlicer.desktop

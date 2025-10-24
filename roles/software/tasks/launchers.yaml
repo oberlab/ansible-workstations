@@ -1,0 +1,17 @@
+---
+- name: Set pinned apps in the Cinnamon Dock
+  json_patch:
+    src: "{{ lookup('env', 'HOME') }}/.config/cinnamon/spices/grouped-window-list@cinnamon.org/2.json"
+    pretty: yes
+    operations:
+      - op: replace
+        path: "/pinned-apps/value"
+        value: "{{ pinned_apps }}"
+  notify: Restart Cinnamon
+
+- name: Install .desktop launchers
+  become: yes
+  template:
+    src: launcher.desktop.j2
+    dest: "/usr/share/applications/{{ item.filename }}.desktop"
+  with_items: "{{ launchers }}"

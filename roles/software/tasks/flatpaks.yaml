@@ -1,0 +1,11 @@
+---
+- name: Print selected flatpaks
+  debug:
+    var: flatpaks
+
+- name: Install group-specific flatpaks
+  become: yes
+  community.general.flatpak:
+    name: "{{ flatpaks }}"
+    state: present
+    method: system

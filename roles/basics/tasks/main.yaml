@@ -1,0 +1,3 @@
+---
+- import_tasks: unattended-upgrades.yaml
+- import_tasks: users.yaml

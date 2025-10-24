@@ -1,0 +1,4 @@
+*.retry
+vendor/*
+!vendor/.gitkeep
+.vault_pass
