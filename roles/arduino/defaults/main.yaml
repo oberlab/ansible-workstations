@@ -1,0 +1,2 @@
+arduino_cores: []
+arduino_cli: flatpak run --command=/app/arduino-ide/resources/app/lib/backend/resources/arduino-cli cc.arduino.IDE2

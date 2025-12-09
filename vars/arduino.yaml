@@ -1,0 +1,4 @@
+arduino_cores:
+  - arduino:avr
+  - arduino:nrf52
+  - esp32:esp32

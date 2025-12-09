@@ -1,10 +1,10 @@
 - name: Setup Oberlab workstations
   hosts: all
   vars_files:
+    - vars/arduino.yaml
     - vars/config.yaml
     - vars/software.yaml
     - vars/users.yaml
-    - vars/ntp.yaml
     - vars/vault.yaml
   roles:
     - role: basics
@@ -13,5 +13,7 @@
       tags: config
     - role: software
       tags: software
+    - role: arduino
+      tags: [software, arduino]
     - role: pull
       tags: pull

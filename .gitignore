@@ -2,3 +2,4 @@
 vendor/*
 !vendor/.gitkeep
 .vault_pass
+.inventory.ini

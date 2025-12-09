@@ -1,0 +1,7 @@
+- name: Install arduino cores
+  become: yes
+  become_user: "{{ default_user }}"
+  ansible.builtin.command:
+    cmd: "{{ arduino_cli }} core install {{ item }}"
+    creates: "/home/{{ default_user }}/.arduino15/packages/{{ item.split(':')[0] }}/hardware/{{ item.split(':')[1] }}"
+  loop: "{{ arduino_cores }}"
