@@ -3,9 +3,20 @@
   debug:
     var: flatpaks
 
+- name: Ensure Flatpak remotes are configured
+  become: yes
+  community.general.flatpak_remote:
+    name: "{{ item }}"
+    flatpakrepo_url: "{{ flatpak_remote_urls[item] }}"
+    method: system
+    state: present
+  loop: "{{ flatpak_remotes_used }}"
+
 - name: Install group-specific flatpaks
   become: yes
   community.general.flatpak:
-    name: "{{ flatpaks }}"
+    name: "{{ item.name }}"
+    remote: "{{ item.remote | default('flathub') }}"
     state: present
     method: system
+  loop: "{{ flatpaks }}"

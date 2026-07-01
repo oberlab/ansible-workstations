@@ -29,12 +29,16 @@ software:
 
     arduino:
       flatpaks:
-        - cc.arduino.IDE2
+        - name: cc.arduino.IDE2
       pinned_apps:
         - cc.arduino.IDE2.desktop:flatpak
 
     3d-printing:
       apt_packages:
         - prusa-slicer
+      flatpaks:
+        - name: org.openscad.OpenSCAD
+          remote: flathub-beta
       pinned_apps:
         - PrusaSlicer.desktop
+        - org.openscad.OpenSCAD.desktop:flatpak
