@@ -11,7 +11,7 @@ software:
         - pv
         - screen
         - vim
-        - visual-studio-code
+        - code
       apt_repository_keys:
         - https://packages.microsoft.com/keys/microsoft.asc
       apt_repositories:
