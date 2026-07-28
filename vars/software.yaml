@@ -39,6 +39,8 @@ software:
       flatpaks:
         - name: org.openscad.OpenSCAD
           remote: flathub-beta
+        - name: com.orcaslicer.OrcaSlicer
       pinned_apps:
         - PrusaSlicer.desktop
         - org.openscad.OpenSCAD.desktop:flatpak
+        - com.orcaslicer.OrcaSlicer.desktop:flatpak
