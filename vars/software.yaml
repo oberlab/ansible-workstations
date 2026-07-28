@@ -34,13 +34,15 @@ software:
         - cc.arduino.IDE2.desktop:flatpak
 
     3d-printing:
-      apt_packages:
-        - prusa-slicer
+      #apt_packages:
+      #  - prusa-slicer
       flatpaks:
         - name: org.openscad.OpenSCAD
           remote: flathub-beta
         - name: com.orcaslicer.OrcaSlicer
+        - name: com.prusa3d.PrusaSlicer
       pinned_apps:
-        - PrusaSlicer.desktop
+        #- PrusaSlicer.desktop
+        - com.prusa3d.PrusaSlicer.desktop:flatpak
         - org.openscad.OpenSCAD.desktop:flatpak
         - com.orcaslicer.OrcaSlicer.desktop:flatpak
