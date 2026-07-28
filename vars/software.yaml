@@ -41,8 +41,10 @@ software:
           remote: flathub-beta
         - name: com.orcaslicer.OrcaSlicer
         - name: com.prusa3d.PrusaSlicer
+        - name: org.freecad.FreeCAD
       pinned_apps:
         #- PrusaSlicer.desktop
         - com.prusa3d.PrusaSlicer.desktop:flatpak
+        - org.freecad.FreeCAD.desktop:flatpak
         - org.openscad.OpenSCAD.desktop:flatpak
         - com.orcaslicer.OrcaSlicer.desktop:flatpak
