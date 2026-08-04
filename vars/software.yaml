@@ -16,9 +16,12 @@ software:
         - https://packages.microsoft.com/keys/microsoft.asc
       apt_repositories:
         - deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main
+      flatpaks:
+        - name: org.localsend.localsend_app
       pinned_apps:
         - nemo.desktop
         - firefox.desktop
+        - org.localsend.localsend_app.desktop:flatpak
 
     2d-graphics:
       apt_packages:
